@@ -3,49 +3,66 @@
 }
 
 :root {
-    /* variables for certain properties */
+    /* variables for color/background-color properties */
     --darkteal: #578ea1;
     --darkgray: #343738;
-    --darkergray: #26292a;
+    --darkergray: #323536;
     --lightgray: #5d6364;
+    --medgray: #404546;
     --paleblue: #d2edf5;
+    --whiteblue: #e3f1f5;
+
+    /* variable for font family */
+    --main-fontfam: Arial, Helvetica, sans-serif;
+
+    /* variable that edits margins so header/body/footer elements fill the whole page */
     --fill-page: -10px;
 }
 
-/* style for links with hover response */
-a {
-    color: var(--darkgray);
-    text-decoration: none;
-    background-color: transparent;
-}
 
-a:hover {
-    color: var(--lightgray);
-}
-
-/* style for header */
+/* style for header and header elements */
 .header {
     display: flex;
     flex-flow: row wrap;
+    align-items: flex-end;
     flex-grow: 1;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: var(--main-fontfam);
     background-color: var(--darkteal);
     min-height: 125px;
     margin: var(--fill-page);
-    align-items: flex-end;
+    border-bottom-style: solid;
+    border-bottom-width: 20px;
+    border-bottom-color: var(--darkergray);
 }
 
 .header h1 {
     padding: 15px;
     margin-bottom: 0px;
-    font-size: 45px;
+    font-size: 50px;
     color: var(--darkergray);
     background-color: var(--darkteal);
 }
 
+.header a {
+    color: var(--darkgray);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* pseudoclass for header link hovering */
+.header a:hover {
+    color: var(--lightgray);
+    font-size: 20px;
+}
+
+/* pseudoclass for header link clicking */
+.header a:active {
+    color: var(--paleblue);
+}
+
 .header p {
     position: relative;
-    left: 38%;
+    left: 35%;
     padding-right: 30px;
     background-color: var(--darkteal);
     color: var(--darkgray);
@@ -53,10 +70,68 @@ a:hover {
     font-weight: bold;
 }
 
-/* style for webpage body */
+/* style for webpage body container */
 .body {
     display: flex;
-    margin-top: 10px;
+    margin-top: 50px;
+    font-family: var(--main-fontfam);
+}
+
+/* style for navigational sidebar */
+.sidebar {
+    flex-flow: column wrap;
+    margin-top: -40px;
+    margin-bottom: 10px;
+    margin-left: var(--fill-page);
+    padding: 20px;
+    max-width: 300px;
+    min-width: 200px;
+    background-image: linear-gradient(to right, var(--whiteblue), 90%, var(--paleblue));
+}
+
+/*
+.sidebar p {
+    background-color: transparent;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--darkgray);
+}
+
+ TO DO: use left border w/ sections to acc border the section and not just the sidebar text */
+
+/* style for the About Me, Work, Contact Me, and Resume sections */
+.sections {
+    font-family: var(--main-fontfam);
+    min-width: 150px;
+    margin-bottom: 10px;
+    padding: 30px;
+    background-color: transparent;
+}
+
+.subsection {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    border-style: solid;
+}
+
+.subsection h3 {
+    display: inline;
+    position: relative;
+    right: 25%;
+    padding-bottom: 0;
+    border-bottom-style: solid;
+    border-bottom-color: var(--darkergray);
+    font-size: 30px;
+    color: var(--darkergray);
+    background-color: transparent;
+}
+
+.subsection p {
+    display: inline;
+    padding: 10px;
+    color: var(--darkgray);
 }
 
 /* style for footer */
