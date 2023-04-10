@@ -1,16 +1,31 @@
+/* TO DO: use left border w/ sections to acc 
+border the section and not just the sidebar text
+
+make content section into flex container/column w the sidebar
+-possibly use float left/right to make h3 stackable?
+
+fix stuff in header/make it into columns as well
+
+responsive web design stuff w/ media queries
+
+add alt text/titles to images--ask Brian and MJ about wtf is going on with that
+
+*/
+
 * {
    background-color: var(--paleblue);
 }
 
 :root {
     /* variables for color/background-color properties */
-    --darkteal: #578ea1;
+    --darkteal: #4f879b;
+    --darkerteal: #375b67;
     --darkgray: #343738;
     --darkergray: #323536;
     --lightgray: #5d6364;
     --medgray: #404546;
-    --paleblue: #d2edf5;
-    --whiteblue: #e3f1f5;
+    --paleblue: #b2d6e1;
+    --whiteblue: #d5f1f9;
 
     /* variable for font family */
     --main-fontfam: Arial, Helvetica, sans-serif;
@@ -30,6 +45,7 @@
     background-color: var(--darkteal);
     min-height: 125px;
     margin: var(--fill-page);
+    margin-right: -20px;
     border-bottom-style: solid;
     border-bottom-width: 20px;
     border-bottom-color: var(--darkergray);
@@ -43,31 +59,31 @@
     background-color: var(--darkteal);
 }
 
+.header p {
+    position: relative;
+    left: 25%;
+    padding: 30px;
+    padding-bottom: 0;
+    background-color: var(--darkteal);
+    color: var(--darkgray);
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .header a {
     color: var(--darkgray);
     text-decoration: none;
     background-color: transparent;
 }
 
-/* pseudoclass for header link hovering */
+/* pseudoclasses for header links  */
 .header a:hover {
     color: var(--lightgray);
     font-size: 20px;
 }
 
-/* pseudoclass for header link clicking */
 .header a:active {
     color: var(--paleblue);
-}
-
-.header p {
-    position: relative;
-    left: 35%;
-    padding-right: 30px;
-    background-color: var(--darkteal);
-    color: var(--darkgray);
-    font-size: 18px;
-    font-weight: bold;
 }
 
 /* style for webpage body container */
@@ -78,46 +94,54 @@
 }
 
 /* style for navigational sidebar */
-.sidebar {
-    flex-flow: column wrap;
+.sidebar-right {
     margin-top: -40px;
     margin-bottom: 10px;
     margin-left: var(--fill-page);
     padding: 20px;
     max-width: 300px;
-    min-width: 200px;
-    background-image: linear-gradient(to right, var(--whiteblue), 90%, var(--paleblue));
+    min-width: fit-content;
+    background-image: linear-gradient(to right, var(--whiteblue), 80%, var(--paleblue));
 }
 
-/*
-.sidebar p {
-    background-color: transparent;
+.sidebar-right p {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    padding-right: 10px;
+    color: var(--darkgray);
     font-size: 30px;
     font-weight: 600;
-    color: var(--darkgray);
+    background-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-right-radius: 13%;
 }
 
- TO DO: use left border w/ sections to acc border the section and not just the sidebar text */
-
-/* style for the About Me, Work, Contact Me, and Resume sections */
+/* general styles for the About Me, Work, Contact Me, and Resume sections */
 .sections {
     font-family: var(--main-fontfam);
-    min-width: 150px;
-    margin-bottom: 10px;
+    max-width: fit-content;
     padding: 30px;
     background-color: transparent;
 }
 
 .subsection {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    border-style: solid;
+    flex-flow: column wrap;
+    min-width: fit-content;
+    margin: 10px;
+    margin-bottom: 150px;
+   /* border-style: solid; */
+   border-left-style: solid;
+   border-left-width: 5px;
+   border-left-color: var(--darkerteal);
 }
 
+
 .subsection h3 {
-    display: inline;
+    display: none;
+    /*
     position: relative;
     right: 25%;
     padding-bottom: 0;
@@ -126,12 +150,80 @@
     font-size: 30px;
     color: var(--darkergray);
     background-color: transparent;
+    */
 }
 
 .subsection p {
     display: inline;
     padding: 10px;
+    font-size: 16px;
     color: var(--darkgray);
+    background-color: transparent;
+}
+
+.pfp-img {
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+    margin-left: 20px;
+    margin-right: -10px;
+    border-style: dotted;
+    border-width: 4px;
+    border-color: var(--darkerteal);
+}
+
+/* style for About Me section */
+#aboutme {
+    margin-right: -10px;
+    padding-right: 50px;
+}
+
+#aboutme p {
+    margin-top: -10px;
+}
+
+/* styles for Work section */
+#work {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#work img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+    border-style: dotted;
+    border-width: 4px;
+    border-color: var(--darkerteal);
+}
+
+/* styles for Contact Me section */
+#contactme {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#contactme p {
+    color: var(--darkgray);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#contactme a {
+    font-size: 18px;
+    color: var(--darkerteal);
+    text-decoration: none;
+}
+
+/* pseudoclasses for Contact Me section links */
+#contactme a:hover {
+    color: var(--lightgray);
+}
+
+#contactme a:active {
+    color: var(--whiteblue);
 }
 
 /* style for footer */
@@ -139,5 +231,6 @@
     display: flex;
     min-height: 50px;
     margin: var(--fill-page);
+    margin-right: -20px;
     background-color: var(--darkteal);
 }
