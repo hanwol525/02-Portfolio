@@ -1,5 +1,6 @@
-/* TO DO: use left border w/ sections to acc 
-border the section and not just the sidebar text
+/* TO DO:
+
+make avatar and deploy a "coming soon" webpage to link to projects
 
 make content section into flex container/column w the sidebar
 -possibly use float left/right to make h3 stackable?
@@ -8,7 +9,11 @@ fix stuff in header/make it into columns as well
 
 responsive web design stuff w/ media queries
 
-add alt text/titles to images--ask Brian and MJ about wtf is going on with that
+add alt text/titles to images
+
+css reset sheet?
+
+put header links into nav tag and reformat
 
 */
 
@@ -30,7 +35,10 @@ add alt text/titles to images--ask Brian and MJ about wtf is going on with that
     /* variable for font family */
     --main-fontfam: Arial, Helvetica, sans-serif;
 
-    /* variable that edits margins so header/body/footer elements fill the whole page */
+    /* 
+    variable that edits margins so 
+    header/body/footer elements fill the whole page 
+    */
     --fill-page: -10px;
 }
 
@@ -192,7 +200,7 @@ add alt text/titles to images--ask Brian and MJ about wtf is going on with that
 #work img {
     max-width: 100%;
     height: auto;
-    margin: 10px;
+    margin: 8px;
     border-style: dotted;
     border-width: 4px;
     border-color: var(--darkerteal);
