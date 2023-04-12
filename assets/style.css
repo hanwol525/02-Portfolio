@@ -1,19 +1,19 @@
 /* TO DO:
 
-make avatar and deploy a "coming soon" webpage to link to projects
-
 make content section into flex container/column w the sidebar
 -possibly use float left/right to make h3 stackable?
 
-fix stuff in header/make it into columns as well
-
 responsive web design stuff w/ media queries
 
-css reset sheet?
-
-put header links into nav tag and reformat
+css reset sheet? ask Brian and/or MJ
 
 go thru comments
+
+change header from "Existential Dread" to my name or smth
+- double check for unprofessional shit that u write in your extremely
+casual writing style bc it helps you keep track of things
+
+
 
 */
 
@@ -22,74 +22,83 @@ go thru comments
 }
 
 :root {
+
     /* variables for color/background-color properties */
+
     --darkteal: #4f879b;
     --darkerteal: #375b67;
     --darkgray: #343738;
     --darkergray: #323536;
-    --lightgray: #5d6364;
+    --lightgray: #7f8789;
     --medgray: #404546;
     --paleblue: #b2d6e1;
     --whiteblue: #d5f1f9;
 
     /* variable for font family */
+
     --main-fontfam: Arial, Helvetica, sans-serif;
 
 }
 
 
 /* style for header and header elements */
+
 .header {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-end;
-    flex-grow: 1;
     font-family: var(--main-fontfam);
     background-color: var(--darkteal);
     min-height: 125px;
-    margin: -10px;
+    margin-top: -37px;
+    margin-left: -40px;
     margin-right: -20px;
-    border-bottom-style: solid;
-    border-bottom-width: 20px;
-    border-bottom-color: var(--darkergray);
+    padding-left: 30px;
 }
 
 .header h1 {
-    padding: 15px;
-    margin-bottom: 0px;
-    font-size: 50px;
-    color: var(--darkergray);
+    display: flex;
+    flex-flow: column wrap;
+    padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 80px;
+    margin-bottom: -10px;
+    font-size: 55px;
+    color: var(--whiteblue);
     background-color: var(--darkteal);
 }
 
-.header p {
-    position: relative;
-    left: 25%;
-    padding: 30px;
-    padding-bottom: 0;
-    background-color: var(--darkteal);
-    color: var(--darkgray);
-    font-size: 18px;
-    font-weight: bold;
+.header nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    background-color: var(--darkergray);
 }
 
 .header a {
-    color: var(--darkgray);
+    color: var(--lightgray);
+    font-size: 15px;
+    font-weight: bold;
     text-decoration: none;
     background-color: transparent;
 }
 
+.header p {
+    background-color: transparent;
+}
+
 /* pseudoclasses for header links  */
+
 .header a:hover {
-    color: var(--lightgray);
-    font-size: 20px;
+    color: var(--darkteal);
+    font-size: 18px;
 }
 
 .header a:active {
     color: var(--paleblue);
 }
 
-/* style for webpage body container */
+/* style for webpage body */
+
 .body {
     display: flex;
     margin-top: 50px;
@@ -97,8 +106,9 @@ go thru comments
 }
 
 /* style for navigational sidebar */
+
 .sidebar-right {
-    margin-top: -40px;
+    margin-top: -50px;
     margin-bottom: 10px;
     margin-left: -10px;
     padding: 20px;
@@ -112,7 +122,7 @@ go thru comments
     justify-content: flex-end;
     margin-bottom: 50px;
     padding-right: 10px;
-    color: var(--darkgray);
+    color: transparent;
     font-size: 30px;
     font-weight: 600;
     background-color: transparent;
@@ -121,7 +131,11 @@ go thru comments
     border-bottom-right-radius: 13%;
 }
 
-/* general styles for the About Me, Work, Contact Me, and Resume sections */
+/* 
+general style for the About Me, 
+Work, Contact Me, and Resume sections
+ */
+
 .sections {
     font-family: var(--main-fontfam);
     max-width: fit-content;
@@ -135,7 +149,6 @@ go thru comments
     min-width: fit-content;
     margin: 10px;
     margin-bottom: 150px;
-   /* border-style: solid; */
    border-left-style: solid;
    border-left-width: 5px;
    border-left-color: var(--darkerteal);
@@ -168,14 +181,17 @@ go thru comments
     display: flex;
     justify-content: flex-end;
     float: right;
+    max-width: 100%;
+    height: auto;
     margin-left: 20px;
     margin-right: -10px;
-    border-style: dotted;
-    border-width: 4px;
-    border-color: var(--darkerteal);
+    border-style: dashed;
+    border-width: 6px;
+    border-color: var(--darkteal);
 }
 
 /* style for About Me section */
+
 #aboutme {
     margin-right: -10px;
     padding-right: 50px;
@@ -186,15 +202,12 @@ go thru comments
 }
 
 /* styles for Work section */
+
 #work {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
-
-/* .placeholder {
-    display: flex;
-} */
 
 #work img {
     display: flex;
@@ -206,19 +219,14 @@ go thru comments
     border-color: var(--darkerteal);
 }
 
-/* #work p {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    border-style: dotted;
-    margin: 8px;
-} */
-
 /* styles for Contact Me section */
+
 #contactme {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-right: -10px;
+    padding-right: 50px;
 }
 
 #contactme p {
@@ -234,6 +242,7 @@ go thru comments
 }
 
 /* pseudoclasses for Contact Me section links */
+
 #contactme a:hover {
     color: var(--lightgray);
 }
@@ -242,7 +251,19 @@ go thru comments
     color: var(--whiteblue);
 }
 
+/* style for resume section */
+
+#resume {
+    margin-right: -10px;
+    padding-right: 50px;
+}
+
+#resume p {
+    margin-top: -10px;
+}
+
 /* style for footer */
+
 .footer {
     display: flex;
     min-height: 50px;
