@@ -2,8 +2,11 @@
 
 make content section into flex container/column w the sidebar
 -possibly use float left/right to make h3 stackable?
+- i think what i'ma have to do is insert each label before shit individually
+ugghhhh okay fine
 
 responsive web design stuff w/ media queries
+- ESPECIALLY for the resume button and sidebar!
 
 css reset sheet? ask Brian and/or MJ
 
@@ -12,8 +15,6 @@ go thru comments
 change header from "Existential Dread" to my name or smth
 - double check for unprofessional shit that u write in your extremely
 casual writing style bc it helps you keep track of things
-
-
 
 */
 
@@ -107,22 +108,26 @@ casual writing style bc it helps you keep track of things
 
 /* style for navigational sidebar */
 
-.sidebar-right {
+.sidebar {
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 600px;
+    flex-grow: 1;
+    flex-shrink: 1;
     margin-top: -50px;
     margin-bottom: 10px;
     margin-left: -10px;
     padding: 20px;
-    max-width: 300px;
-    min-width: fit-content;
     background-image: linear-gradient(to right, var(--whiteblue), 80%, var(--paleblue));
 }
 
-.sidebar-right p {
+.sidebar p {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    padding-top: 100px;
     padding-right: 10px;
-    color: transparent;
+    color: blue;
     font-size: 30px;
     font-weight: 600;
     background-color: transparent;
@@ -149,40 +154,26 @@ Work, Contact Me, and Resume sections
     min-width: fit-content;
     margin: 10px;
     margin-bottom: 150px;
-   border-left-style: solid;
-   border-left-width: 5px;
-   border-left-color: var(--darkerteal);
-}
-
-
-.subsection h3 {
-    display: none;
-    /*
-    position: relative;
-    right: 25%;
-    padding-bottom: 0;
-    border-bottom-style: solid;
-    border-bottom-color: var(--darkergray);
-    font-size: 30px;
-    color: var(--darkergray);
-    background-color: transparent;
-    */
 }
 
 .subsection p {
     display: inline;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--darkgray);
     background-color: transparent;
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: var(--darkerteal);
 }
 
 .pfp-img {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: flex-end;
+    max-height: 200px;
+    max-width: 200px;
     float: right;
-    max-width: 100%;
-    height: auto;
     margin-left: 20px;
     margin-right: -10px;
     border-style: dashed;
@@ -192,13 +183,16 @@ Work, Contact Me, and Resume sections
 
 /* style for About Me section */
 
-#aboutme {
-    margin-right: -10px;
-    padding-right: 50px;
+.aboutme-mainsec{
+    display: inline flex;
+    flex-flow: row wrap;
 }
 
-#aboutme p {
-    margin-top: -10px;
+#aboutme {
+    display: flex;
+    margin-right: -10px;
+    padding-right: 50px;
+    background-color: transparent;
 }
 
 /* styles for Work section */
@@ -207,13 +201,16 @@ Work, Contact Me, and Resume sections
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: var(--darkerteal);
 }
 
 #work img {
     display: flex;
     max-width: 100%;
     height: auto;
-    margin: 8px;
+    margin: 4px;
     border-style: dotted;
     border-width: 4px;
     border-color: var(--darkerteal);
@@ -251,15 +248,47 @@ Work, Contact Me, and Resume sections
     color: var(--whiteblue);
 }
 
-/* style for resume section */
+/* style for Resume section */
 
 #resume {
-    margin-right: -10px;
-    padding-right: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 10px;
+    /* margin-right: -10px;
+    padding-right: 50px; */
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: var(--darkerteal);
 }
 
 #resume p {
-    margin-top: -10px;
+    margin-top: 0px;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 20px;
+    border-color: var(--darkergray);
+    color: var(--whiteblue);
+    font-size: 30px;
+    background-color: var(--darkerteal);
+}
+
+#resume a {
+    text-decoration: none;
+}
+
+/* pseudoclasses for Resume link hovering */
+
+#resume p:hover {
+    color: var(--darkgray);
+    border-color: var(--darkgray);
+    background-color: var(--darkteal);
+}
+
+#resume p:active {
+    color: var(--darkergray);
+    border-color: var(--darkteal);
+    background-color: var(--paleblue);
 }
 
 /* style for footer */
