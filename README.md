@@ -3,6 +3,8 @@
 ## Project Description
 This is a portfolio page to be updated with projects as the course progresses. It includes a short bio, a "Work" sections with linked placeholders, contact information, and a linked resume.
 
+<a href="https://hanwol525.github.io/02-Portfolio/">Deployed page</a>
+
 <br>
 
 ## Technology Used
