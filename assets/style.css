@@ -1,17 +1,3 @@
-/* TO DO:
-
-populate readme
-
-css reset sheet? ask Brian and/or MJ
-
-go thru comments
-
-change header from "Existential Dread" to my name or smth
-- double check for unprofessional shit that u write in your extremely
-casual writing style bc it helps you keep track of things
-
-*/
-
 * {
    background-color: var(--paleblue);
 }
@@ -28,6 +14,7 @@ casual writing style bc it helps you keep track of things
     --medgray: #404546;
     --paleblue: #b2d6e1;
     --whiteblue: #d5f1f9;
+    --trueblue: #004AAD;
 
     /* variable for font family */
 
@@ -41,7 +28,7 @@ casual writing style bc it helps you keep track of things
 .header {
     font-family: var(--main-fontfam);
     background-color: var(--darkteal);
-    min-height: 125px;
+    min-height: 100px;
     margin-top: -37px;
     margin-left: -40px;
     margin-right: -20px;
@@ -92,7 +79,7 @@ casual writing style bc it helps you keep track of things
     color: var(--paleblue);
 }
 
-/* style for webpage body */
+/* general style for webpage body */
 
 .body {
     display: flex;
@@ -100,7 +87,7 @@ casual writing style bc it helps you keep track of things
     font-family: var(--main-fontfam);
 }
 
-/* style for navigational sidebar */
+/* style for fullscreen sidebar and section labels */
 
 .sidebar {
     display: flex;
@@ -112,7 +99,6 @@ casual writing style bc it helps you keep track of things
     margin-bottom: 10px;
     margin-left: -10px;
     padding: 20px;
-    background-image: linear-gradient(to right, var(--whiteblue), 80%, var(--paleblue));
 }
 
 .sidebar p {
@@ -148,10 +134,18 @@ casual writing style bc it helps you keep track of things
     top: 980px;
 }
 
-/* 
-general style for the About Me, 
-Work, Contact Me, and Resume sections
- */
+/* properties for the section labels that appear above sections in smaller displays */
+
+.responsive {
+    display: none;
+    margin-bottom: -20px;
+    font-size: 30px;
+    color: var(--darkergray);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* general style for the About Me, Work, Contact Me, and Resume sections */
 
 .sections {
     font-family: var(--main-fontfam);
@@ -179,16 +173,7 @@ Work, Contact Me, and Resume sections
     border-left-color: var(--darkerteal);
 }
 
-/* setting properties for responsive section labels */
-
-.responsive {
-    display: none;
-    margin-bottom: -20px;
-    font-size: 30px;
-    color: var(--darkergray);
-    font-weight: bold;
-    text-decoration: underline;
-}
+/* properties for cat avatar image */
 
 .pfp-img {
     display: flex;
@@ -201,10 +186,10 @@ Work, Contact Me, and Resume sections
     margin-right: -10px;
     border-style: dashed;
     border-width: 6px;
-    border-color: var(--darkteal);
+    border-color: var(--trueblue);
 }
 
-/* style for About Me section */
+/* specific style for About Me section */
 
 #aboutme {
     display: flex;
@@ -213,7 +198,7 @@ Work, Contact Me, and Resume sections
     background-color: transparent;
 }
 
-/* styles for Work section */
+/* specific style for Work section */
 
 #work {
     display: flex;
@@ -234,7 +219,7 @@ Work, Contact Me, and Resume sections
     border-color: var(--darkerteal);
 }
 
-/* styles for Contact Me section */
+/* specific style for Contact Me section */
 
 #contactme {
     display: flex;
@@ -266,15 +251,13 @@ Work, Contact Me, and Resume sections
     color: var(--whiteblue);
 }
 
-/* style for Resume section */
+/* specific style for Resume section */
 
 #resume {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     padding: 10px;
-    /* margin-right: -10px;
-    padding-right: 50px; */
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: var(--darkerteal);
@@ -295,7 +278,7 @@ Work, Contact Me, and Resume sections
     text-decoration: none;
 }
 
-/* pseudoclasses for Resume link hovering */
+/* pseudoclasses for Resume link */
 
 #resume p:hover {
     color: var(--darkgray);
@@ -322,6 +305,9 @@ Work, Contact Me, and Resume sections
 /* media queries for responsive design */
 
 @media screen and (max-width: 1275px) {
+
+    /* code for hiding sidebar and showing the responsive section labels */
+
     .sidebar {
         display: none;
     }
@@ -354,6 +340,19 @@ Work, Contact Me, and Resume sections
 }
 
 @media screen and (max-width: 768px) {
+
+    .header h1 {
+        font-size: 45px;
+    }
+
+    .header a {
+        font-size: 14px;
+    }
+
+    .header a:hover {
+        font-size: 16px;
+    }
+
     .subsection {
         min-width: 300px;
     }
@@ -367,22 +366,13 @@ Work, Contact Me, and Resume sections
         border-width: 4px;
     }
 
-    #aboutme {
-        margin-top: -270px;
-        padding-bottom: 10px;
-    }
-
-    #work {
-        margin-top: 150px;
-    }
-
-    #contactme p {
-        flex-direction: column;
+    .responsive {
+        font-size: 25px;
     }
 
     #responsive-aboutme {
         position: relative;
-        padding-top: 10px;
+        padding-top: 40px;
         bottom: 260px;
     }
 
@@ -399,27 +389,76 @@ Work, Contact Me, and Resume sections
     #responsive-resume {
         left: 1px;
     }
+
+    #aboutme {
+        margin-top: -270px;
+        padding-bottom: 10px;
+    }
+
+    #aboutme p {
+        font-size: 15px;
+    }
+
+    #work {
+        margin-top: 150px;
+    }
+
+    #contactme p {
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 600px) {
+
+    .header {
+        margin-right: -40px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header a {
+        font-size: 11px;
+    }
+
+    .header a:hover {
+        font-size: 13px;
+    }
 
     .pfp-img {
         display: none;
     }
 
+    .responsive {
+        font-size: 18px;
+    }
+
     #responsive-aboutme {
+        margin-top: 10px;
         bottom: 60px; 
     }
 
     #responsive-work {
         top: 110px;
-        left: 20px;
+        right: 40px;
+    }
+
+    #responsive-contactme {
+        top: 20px;
+    }
+
+    #responsive-resume {
+        bottom: 35px;
     }
 
     #aboutme {
         position: relative;
         top: 200px;
-        font-size: 12px;
+    }
+
+    #aboutme p {
+        font-size: 13px;
     }
 
     #resume p {
