@@ -1,12 +1,6 @@
 /* TO DO:
 
-make content section into flex container/column w the sidebar
--possibly use float left/right to make h3 stackable?
-- i think what i'ma have to do is insert each label before shit individually
-ugghhhh okay fine
-
-responsive web design stuff w/ media queries
-- ESPECIALLY for the resume button and sidebar!
+populate readme
 
 css reset sheet? ask Brian and/or MJ
 
@@ -77,7 +71,7 @@ casual writing style bc it helps you keep track of things
 
 .header a {
     color: var(--lightgray);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     text-decoration: none;
     background-color: transparent;
@@ -111,9 +105,9 @@ casual writing style bc it helps you keep track of things
 .sidebar {
     display: flex;
     flex-flow: column wrap;
-    flex-basis: 600px;
+    flex-basis: 200px;
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 0;
     margin-top: -50px;
     margin-bottom: 10px;
     margin-left: -10px;
@@ -126,14 +120,32 @@ casual writing style bc it helps you keep track of things
     justify-content: flex-end;
     margin-bottom: 100px;
     padding-top: 100px;
-    padding-right: 10px;
-    color: blue;
+    padding-right: 5px;
+    color: var(--darkergray);
     font-size: 30px;
     font-weight: 600;
     background-color: transparent;
     border-bottom-style: solid;
     border-bottom-width: 3px;
-    border-bottom-right-radius: 13%;
+}
+
+#aboutme-label {
+    position: relative;
+}
+
+#work-label {
+    position: relative;
+    top: 120px;
+}
+
+#contactme-label {
+    position: relative;
+    top: 1023px;
+}
+
+#resume-label {
+    position: relative;
+    top: 980px;
 }
 
 /* 
@@ -167,6 +179,17 @@ Work, Contact Me, and Resume sections
     border-left-color: var(--darkerteal);
 }
 
+/* setting properties for responsive section labels */
+
+.responsive {
+    display: none;
+    margin-bottom: -20px;
+    font-size: 30px;
+    color: var(--darkergray);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .pfp-img {
     display: flex;
     flex-direction: column-reverse;
@@ -182,11 +205,6 @@ Work, Contact Me, and Resume sections
 }
 
 /* style for About Me section */
-
-.aboutme-mainsec{
-    display: inline flex;
-    flex-flow: row wrap;
-}
 
 #aboutme {
     display: flex;
@@ -295,8 +313,116 @@ Work, Contact Me, and Resume sections
 
 .footer {
     display: flex;
-    min-height: 50px;
+    min-height: 100px;
     margin: -10px;
     margin-right: -20px;
     background-color: var(--darkteal);
+}
+
+/* media queries for responsive design */
+
+@media screen and (max-width: 1275px) {
+    .sidebar {
+        display: none;
+    }
+
+    .responsive {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+    }
+
+    #responsive-work {
+        position: relative;
+        right: 130px;
+        bottom: 30px;
+    }
+
+    #responsive-contactme {
+        position: relative;
+        right: 140px;
+        bottom: 10px;
+        margin-bottom: 5px;
+    }
+
+    #responsive-resume {
+        position: relative;
+        right: 155px;
+        bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .subsection {
+        min-width: 300px;
+    }
+
+    .pfp-img {
+        position: relative;
+        top: 150px;
+        left: 240px;
+        float: none;
+        max-width: 150px;
+        border-width: 4px;
+    }
+
+    #aboutme {
+        margin-top: -270px;
+        padding-bottom: 10px;
+    }
+
+    #work {
+        margin-top: 150px;
+    }
+
+    #contactme p {
+        flex-direction: column;
+    }
+
+    #responsive-aboutme {
+        position: relative;
+        padding-top: 10px;
+        bottom: 260px;
+    }
+
+    #responsive-work {
+        top: 100px;
+        left: 10px;
+    }
+
+    #responsive-contactme {
+        left: 10px;
+        margin-top: -50px;
+    }
+
+    #responsive-resume {
+        left: 1px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .pfp-img {
+        display: none;
+    }
+
+    #responsive-aboutme {
+        bottom: 60px; 
+    }
+
+    #responsive-work {
+        top: 110px;
+        left: 20px;
+    }
+
+    #aboutme {
+        position: relative;
+        top: 200px;
+        font-size: 12px;
+    }
+
+    #resume p {
+        font-size: 18px;
+    }
 }
